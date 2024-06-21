@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "username": " rama_0",
+      "email": "dyavarivenkat2662@gmail.com",
+      "password": "15437",
+      "id": 1
+    }
+  ],
+  "removedusers": [
+    {
+      "username": "saikumar",
+      "email": "cr7@gmail.com",
+      "password": "tanujalover",
+      "id": 3
+    },
+    {
+      "username": " ram3a",
+      "email": "dyavarianjilaiah7@gmail.com",
+      "password": "154378",
+      "id": 2
+    }
+  ]
+}
