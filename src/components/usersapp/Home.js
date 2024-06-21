@@ -15,7 +15,7 @@ function Home() {
     let showModal=()=>setshow(true)
     let closeModal=()=>setshow(false)
 
-   
+ 
 
     //save data
 
@@ -39,10 +39,9 @@ function Home() {
       })
     }
 
-    let registerEvent=()=>{
+   
 
-    }
-
+  
     
 
 
@@ -84,7 +83,7 @@ function Home() {
                 <p>{dataObj.doe}</p>
                 
                 
-                <button className="btn btn-primary float-start" onClick={()=>registerEvent(dataObj)}>Register</button>
+                <button className="btn btn-primary float-start" >register</button>
                 
           </div>
         </div>

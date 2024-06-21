@@ -3,6 +3,7 @@ import '../allcss/AddUser.css'
 import {useForm} from 'react-hook-form'
 import {  useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import img from '../Screensots/register.png'
 function Register() {
   
   let {register,handleSubmit,formState:{errors}}=useForm()
@@ -72,15 +73,20 @@ let addnewuser=(newuser)=>{
     
 
   return (
-    <div> 
+    <div className='bg-black  '>
+      <div className=' row  justify-content-center  '>
+    <div className='col-3 ' >
+      <img src={img}   className='  w-100'  alt="" />
+
+    </div>
       
-      <div>
-      <p className="display-3 text-center mt-3 mb-3">Add user</p>
+      <div className='col-3' >
+       
       {/*err.length!==0 && <p className='text-danger'>{err}</p>*/}
       <div className="row">
-        <div className="col-sm-8 col-12 col-md-4 mx-auto border px-3 py-3 shadow bg-light">
+        <div className=" col-md-12 mx-auto     shadow text-white">
           <form onSubmit={handleSubmit(addnewuser)}>
-            <label htmlFor="username">username</label>
+           
             <input type="text"
              id='username'
              placeholder='username'
@@ -88,7 +94,7 @@ let addnewuser=(newuser)=>{
              {...register("username",{required:'True'})}
             />
              {errors.username?.type==='required' && <p className='text-danger'>*this field is required</p>}
-            <label htmlFor="email">email</label>
+       
             <input type="email"
             id='email'
              placeholder='@gmail.com'
@@ -98,18 +104,22 @@ let addnewuser=(newuser)=>{
             {errors.username?.type==='required' && <p className='text-danger'>*this field is required</p>}
 
             <div>
-          <label>Password:</label>
+       
           <input
             type="password"
+            placeholder='password'
             value={password}
+            className='mb-3 form-control'
             onChange={handlePasswordChange}
           />
         </div>
         <div>
-          <label>Confirm Password:</label>
+
           <input
             type="password"
+            placeholder='confirm password'
             value={confirmPassword}
+            className='mb-3 form-control'
             onChange={handleConfirmPasswordChange}
            
           />
@@ -117,13 +127,19 @@ let addnewuser=(newuser)=>{
         {!passwordMatch && (
           <p style={{ color: 'red' }}>Passwords do not match.</p>
         )}
-            <label htmlFor="dateofbirth">date of Birth</label>
-            <input type="date"
-             id='dob'
-             className='form-control mt-3'
-             {...register("dateofbirth",{required:'True'})}
-            />
-            {errors.dateofbirth?.type==='required' && <p className='text-danger'>*this field is required</p>}
+            
+             
+
+            <select name="userType" id="user" className='form-control'  {...register("userType",{required:'True'})}  >
+              <option value="none" disabled>choose user type</option>
+              <option value="admin">admin</option>
+              <option value="user">user</option>
+            </select>
+            {errors.userType?.type==='required' && <p className='text-danger'>*this field is required</p>}
+
+
+
+
             <label htmlFor="name">upload pro pic</label>
             <input type="file"
             id='image'
@@ -139,8 +155,11 @@ let addnewuser=(newuser)=>{
         </div>
       </div>
       </div>
+
+      </div> 
+      </div>
  
-    </div>
+    
   )
 }
 

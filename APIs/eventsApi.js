@@ -60,6 +60,7 @@ eventApp.delete("/delete-event/:id",expressAsyncHandler(async(request,response)=
     
     const eventCollectionObj=request.app.get("eventCollectionObj")
     let deleteevent=request.body;
+    console.log(request.body)
     await eventCollectionObj.deleteOne(deleteevent)
     .then(()=>{
         response.status(200).send({message:"event deleted"})

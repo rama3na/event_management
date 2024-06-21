@@ -97,9 +97,7 @@ function ViewEvent() {
 
     //delete land data
     useEffect(()=>{
-    getData();
-  
-      
+    getData(); 
     },[])
 
     const onFileSelect=(e)=>{

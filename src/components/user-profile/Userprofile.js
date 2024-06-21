@@ -20,24 +20,20 @@ function Userprofile() {
 
   return (
     <div> 
-      <p className='display-4 text-danger text-end'> welcome {currentUser.username}!</p>
-      <img src={currentUser.image} w='100' height='200px' alt="" />
-
-      <ul className='nav justify-content-between'>
-      <li className="nav-item">
-            <NavLink className="nav-link  "   to="Products" style={({isActive})=>{
-              return isActive ? activeLink :inactiveLink;
-            }} >Products</NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink className="nav-link "   to="Cart" style={({isActive})=>{
-              return isActive ? activeLink :inactiveLink;
-            }} >Cart</NavLink>
-          </li>
-
-      </ul>
-      <Outlet/>
+           <h4 className='text-center mb-5 mt-3 text-danger'>😀 welcome : {currentUser.username}</h4>
+        <div className="row">
+          <div className="col-sm-8 col-11 col-md-4 mx-auto border px-3 py-3 shadow bg-light">
+                  <div className="card">
+                    <img src={currentUser.image} alt=""   className='w-100' />
+                    <div className="card-body text-center">
+                        <p>email: {currentUser.email}</p> 
+                      <h5>username: {currentUser.username}</h5>
+                      <h5>DOB: {currentUser.dateofbirth}</h5>
+                      
+                    </div>
+                  </div>
+          </div>
+        </div>
 
     </div>
   )
